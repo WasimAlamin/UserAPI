@@ -23,7 +23,8 @@ namespace LogInAPI
         {
             services.AddIdentity<User, Role>(Options =>
             {
-
+                Options.Password.RequireNonAlphanumeric = false;
+            
             }).AddEntityFrameworkStores<MyContext>();
             services.AddControllers();
             services.AddDbContext<MyContext>(option =>
